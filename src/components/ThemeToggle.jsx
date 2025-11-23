@@ -9,7 +9,7 @@ export const ThemeToggle = () => {
   const storedTheme = localStorage.getItem("theme");
 
   if (storedTheme) {
-    // If user has saved a theme
+
     if (storedTheme === "dark") {
       document.documentElement.classList.add("dark");
       setIsDarkMode(true);
@@ -18,7 +18,6 @@ export const ThemeToggle = () => {
       setIsDarkMode(false);
     }
   } else {
-    // Default theme = DARK
     document.documentElement.classList.add("dark");
     localStorage.setItem("theme", "dark");
     setIsDarkMode(true);
