@@ -1,100 +1,7 @@
-// import { useEffect, useState } from "react";
-
-// // id, size, x, y, opacity, animationDuration
-// // id, size, x, y, delay, animationDuration
-
-// export const StarBackground = () => {
-//   const [stars, setStars] = useState([]);
-//   const [meteors, setMeteors] = useState([]);
-
-//   useEffect(() => {
-//     generateStars();
-//     generateMeteors();
-
-//     const handleResize = () => {
-//       generateStars();
-//     };
-
-//     window.addEventListener("resize", handleResize);
-
-//     return () => window.removeEventListener("resize", handleResize);
-//   }, []);
-
-//   const generateStars = () => {
-//     const numberOfStars = Math.floor(
-//       (window.innerWidth * window.innerHeight) / 10000
-//     );
-
-//     const newStars = [];
-
-//     for (let i = 0; i < numberOfStars; i++) {
-//       newStars.push({
-//         id: i,
-//         size: Math.random() * 3 + 1,
-//         x: Math.random() * 100,
-//         y: Math.random() * 100,
-//         opacity: Math.random() * 0.5 + 0.5,
-//         animationDuration: Math.random() * 4 + 2,
-//       });
-//     }
-
-//     setStars(newStars);
-//   };
-
-//   const generateMeteors = () => {
-//     const numberOfMeteors = 4;
-//     const newMeteors = [];
-
-//     for (let i = 0; i < numberOfMeteors; i++) {
-//       newMeteors.push({
-//         id: i,
-//         size: Math.random() * 2 + 1,
-//         x: Math.random() * 100,
-//         y: Math.random() * 20,
-//         delay: Math.random() * 15,
-//         animationDuration: Math.random() * 3 + 3,
-//       });
-//     }
-
-//     setMeteors(newMeteors);
-//   };
-
-//   return (
-//     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-//       {stars.map((star) => (
-//         <div
-//           key={star.id}
-//           className="star animate-pulse-subtle"
-//           style={{
-//             width: star.size + "px",
-//             height: star.size + "px",
-//             left: star.x + "%",
-//             top: star.y + "%",
-//             opacity: star.opacity,
-//             animationDuration: star.animationDuration + "s",
-//           }}
-//         />
-//       ))}
-
-//       {meteors.map((meteor) => (
-//         <div
-//           key={meteor.id}
-//           className="meteor animate-meteor"
-//           style={{
-//             width: meteor.size * 50 + "px",
-//             height: meteor.size * 2 + "px",
-//             left: meteor.x + "%",
-//             top: meteor.y + "%",
-//             animationDelay: meteor.delay,
-//             animationDuration: meteor.animationDuration + "s",
-//           }}
-//         />
-//       ))}
-//     </div>
-//   );
-// };
-
 import { useEffect, useState } from "react";
+
+// id, size, x, y, opacity, animationDuration
+// id, size, x, y, delay, animationDuration
 
 export const StarBackground = () => {
   const [stars, setStars] = useState([]);
@@ -104,13 +11,15 @@ export const StarBackground = () => {
     generateStars();
     generateMeteors();
 
-    const handleResize = () => generateStars();
+    const handleResize = () => {
+      generateStars();
+    };
+
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  /* ⭐ Generate stars */
   const generateStars = () => {
     const numberOfStars = Math.floor(
       (window.innerWidth * window.innerHeight) / 10000
@@ -125,14 +34,13 @@ export const StarBackground = () => {
         x: Math.random() * 100,
         y: Math.random() * 100,
         opacity: Math.random() * 0.5 + 0.5,
-        duration: Math.random() * 4 + 2,
+        animationDuration: Math.random() * 4 + 2,
       });
     }
 
     setStars(newStars);
   };
 
-  /* ⭐ Generate meteors */
   const generateMeteors = () => {
     const numberOfMeteors = 4;
     const newMeteors = [];
@@ -144,7 +52,7 @@ export const StarBackground = () => {
         x: Math.random() * 100,
         y: Math.random() * 20,
         delay: Math.random() * 15,
-        duration: Math.random() * 3 + 3,
+        animationDuration: Math.random() * 3 + 3,
       });
     }
 
@@ -153,24 +61,21 @@ export const StarBackground = () => {
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-
-      {/* ⭐ Glowing Stars */}
       {stars.map((star) => (
         <div
           key={star.id}
-          className="star animate-star-glow"
+          className="star animate-pulse-subtle"
           style={{
             width: star.size + "px",
             height: star.size + "px",
             left: star.x + "%",
             top: star.y + "%",
             opacity: star.opacity,
-            "--duration": star.duration + "s",
+            animationDuration: star.animationDuration + "s",
           }}
         />
       ))}
 
-      {/* ⭐ Meteors (original effect) */}
       {meteors.map((meteor) => (
         <div
           key={meteor.id}
@@ -180,11 +85,12 @@ export const StarBackground = () => {
             height: meteor.size * 2 + "px",
             left: meteor.x + "%",
             top: meteor.y + "%",
-            animationDelay: `${meteor.delay}s`,
-            animationDuration: `${meteor.duration}s`,
+            animationDelay: meteor.delay,
+            animationDuration: meteor.animationDuration + "s",
           }}
         />
       ))}
     </div>
   );
 };
+
