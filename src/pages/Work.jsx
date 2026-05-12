@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import gorsvp from '../assets/gorsvp.png';
+import sheShield from '../assets/SheShield.png';
+import NextGenHire from '../assets/NextgenHire.png';
 
 export default function Work() {
   return (
@@ -45,7 +47,7 @@ export default function Work() {
                   Built and designed GoRSVP, an event management platform focused on seamless RSVP tracking, event creation, and attendee management. Developed responsive interfaces and interactive dashboards to improve user experience and event workflows.
                 </p>
                 <div className="flex items-center gap-8">
-                  <a className="group/link flex items-center gap-2 font-bold text-secondary uppercase text-sm tracking-widest border-b-2 border-secondary/20 hover:border-secondary transition-all" href="#">
+                  <a className="group/link flex items-center gap-2 font-bold text-secondary uppercase text-sm tracking-widest border-b-2 border-secondary/20 hover:border-secondary transition-all" href="go-rsvp.vercel.app">
                     Live Link <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">north_east</span>
                   </a>
                   <a className="group/link flex items-center gap-2 font-bold text-on-surface uppercase text-sm tracking-widest border-b-2 border-on-surface/20 hover:border-on-surface transition-all" href="#">
@@ -58,50 +60,57 @@ export default function Work() {
           <div className="absolute -z-10 -bottom-4 -right-4 w-full h-full border border-outline-variant/20 pointer-events-none bg-surface-container/95 backdrop-blur-sm"></div>
         </div>
 
-        {/* Project 2: NextGenHire (Vertical Bias) */}
+        {/* Project 2:Sheshield */}
         <div className="col-span-12 md:col-span-4 md:mt-24 group">
           <div className="bg-surface-container-lowest canvas-texture p-unit paper-curl transition-all duration-500 hover:-translate-y-2 border-l-4 border-secondary">
             <div className="relative overflow-hidden aspect-3/4">
               <img 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                alt="NextGenHire Project" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnWfWzBQhLfcKFWi_18shGBcHgqC1tjjlLlmu0m305atXGGXDB-3HTlziTe22PgNPga1mr7tgFxWj0ocW4Gyq_anJ05L160qpCsgNg-fvCnmI3nAOBRhDTmtLPrQVik6nL39f88LQtUOUuxBwGnvvUiDgCB1aqxdxYuOmM-WK394dYYi46CnqiMe8n4dWrK-HUGCOH4hXyft8vLeknOG-dVRk5lC0Mqr1kTz_iRFQs0CWDrwEbNWtVxFU_tfubh-NWNe4dwO9F3qWm"
+                alt="SheShield Project" 
+                src={sheShield}
               />
             </div>
             <div className="mt-6">
-              <span className="font-label-sm text-secondary uppercase tracking-widest bg-primary-fixed px-3 py-1 mb-2 inline-block rotate-1">AI Engineering</span>
-              <h2 className="font-headline-md text-headline-md text-primary">NextGenHire</h2>
+              {/* <span className="font-label-sm text-secondary uppercase tracking-widest bg-primary-fixed px-3 py-1 mb-2 inline-block rotate-1">AI Engineering</span> */}
+              <h2 className="font-headline-md text-headline-md text-primary">SheShield</h2>
               <p className="font-body-md text-on-surface-variant mt-2">
-                An AI-driven recruitment platform redefining talent acquisition through semantic matching.
+                Developed a women safety application with SOS alerts, live location sharing, and emergency support features. Designed simple and accessible interfaces to ensure quick interaction and ease of use during emergency situations.
               </p>
-              <div className="mt-4 flex gap-2">
-                <span className="text-[10px] font-bold uppercase tracking-tighter bg-surface-container-highest px-2 py-1">Python</span>
-                <span className="text-[10px] font-bold uppercase tracking-tighter bg-surface-container-highest px-2 py-1">Next.js</span>
-              </div>
+              <div className="flex items-center gap-8">
+                  {/* <a className="group/link flex items-center gap-2 font-bold text-secondary uppercase text-sm tracking-widest border-b-2 border-secondary/20 hover:border-secondary transition-all" href="#">
+                    Live Link <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">north_east</span>
+                  </a> */}
+                  <a className="group/link flex items-center gap-2 font-bold text-on-surface uppercase text-sm tracking-widest border-b-2 border-on-surface/20 hover:border-on-surface transition-all" href="#">
+                    Case Study <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                  </a>
+                </div>
             </div>
           </div>
         </div>
 
-        {/* Project 3: Women Safety App (Offset Card) */}
+        {/* Project 3: NextGenHire */}
         <div className="col-span-12 md:col-span-5 group relative md:-mt-12">
           <div className="bg-surface-container-low canvas-texture p-unit paper-curl transition-all duration-500 hover:-translate-y-2">
             <div className="relative overflow-hidden aspect-square">
               <img 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" 
-                alt="Guardian Shield" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSez91TlzI6KMLeN5LiO4xVMwZD5eOoFuBNDim1Nr43btsp2yezvT2CRINIBCIIHKb_J3Fn_6Q9xy-4qCl384l2tuJsqaO6GOR8fCPBS8THJy9PcsNOQm8elnVCmy7fKUD3_xbFuseter7VDoG4MHIZX77HbZSxulzsBEq2SnHkaBCNwNqCjawSdhfb3tPe2In0fShhauxS1dOwpWYDdFEIwUCQ4hzM81vXXpsd4rKTd3ybeOSNdRo5W816m_E2CuilpxChYry5K0d"
+                alt="NextGenHire Project" 
+                src={NextGenHire}
               />
             </div>
             <div className="mt-6">
-              <h2 className="font-headline-md text-headline-md text-primary">Guardian Shield</h2>
+              <h2 className="font-headline-md text-headline-md text-primary">NextGenHired</h2>
               <p className="font-body-md text-on-surface-variant mt-2 italic border-l-2 border-secondary pl-4">
-                Critical response and community safety network designed with empathy and speed at its core.
+                Built a gamified learning and skill-based hiring platform that connects candidates with recruiters through practical assessments and interactive workflows. Focused on creating intuitive dashboards and responsive user experiences for both learners and recruiters.
               </p>
-              <div className="mt-6">
-                <a href="#" className="inline-flex items-center gap-2 font-bold text-secondary border-b border-secondary hover:gap-4 transition-all duration-300">
-                  View Case Study <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
-              </div>
+              <div className="flex items-center gap-8">
+                  <a className="group/link flex items-center gap-2 font-bold text-secondary uppercase text-sm tracking-widest border-b-2 border-secondary/20 hover:border-secondary transition-all" href="#">
+                    Live Link <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">north_east</span>
+                  </a>
+                  <a className="group/link flex items-center gap-2 font-bold text-on-surface uppercase text-sm tracking-widest border-b-2 border-on-surface/20 hover:border-on-surface transition-all" href="#">
+                    Case Study <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                  </a>
+                </div>
             </div>
           </div>
           {/* Ink splatter decorative element */}
