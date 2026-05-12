@@ -40,7 +40,7 @@ export default function Experience() {
             <div className="relative group">
               <div className="flex flex-col md:flex-row gap-gutter">
                 <div className="md:w-1/3">
-                  <span className="font-label-sm text-secondary uppercase tracking-[0.2em]">2023 — 2024</span>
+                  <span className="font-label-sm text-secondary uppercase tracking-[0.2em]">2024 — 2025</span>
                   <h2 className="font-headline-lg text-headline-lg mt-2 leading-none">StackLab</h2>
                   <p className="font-body-md text-on-surface-variant italic mt-1">UI/UX &amp; Web Developer Intern</p>
                 </div>
