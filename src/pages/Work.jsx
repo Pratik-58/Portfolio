@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import gorsvp from '../assets/gorsvp.png';
 import sheShield from '../assets/SheShield.png';
-import NextGenHire from '../assets/NextgenHire.png';
+import NextGenHire from '../assets/NextGenHire.png';
 
 export default function Work() {
   return (
