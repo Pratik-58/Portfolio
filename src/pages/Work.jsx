@@ -1,36 +1,90 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import gorsvp from '../assets/gorsvp.png';
 import sheShield from '../assets/SheShield.png';
 import NextGenHire from '../assets/NextGenHire.png';
 
 export default function Work() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const projectVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
+
   return (
     <main className="pt-32 pb-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-stack-lg relative">
       <div className="fixed inset-0 pointer-events-none texture-canvas"></div>
       <div className="fixed inset-0 pointer-events-none grain-overlay opacity-30"></div>
       
       {/* Hero Section Header */}
-      <section className="mb-stack-lg">
-        <h1 className="font-display-lg text-display-lg text-primary max-w-3xl leading-none">
+      <motion.section 
+        className="mb-stack-lg"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.h1 
+          className="font-display-lg text-display-lg text-primary max-w-3xl leading-none"
+          variants={headerVariants}
+        >
           Selected <span className="text-secondary italic">Works</span> &amp; Experiments
-        </h1>
-        <div className="h-1 w-24 bg-secondary mt-unit"></div>
-        <p className="font-body-lg text-on-surface-variant max-w-xl mt-stack-md leading-relaxed">
+        </motion.h1>
+        <motion.div 
+          className="h-1 w-24 bg-secondary mt-unit"
+          variants={headerVariants}
+        ></motion.div>
+        <motion.p 
+          className="font-body-lg text-on-surface-variant max-w-xl mt-stack-md leading-relaxed"
+          variants={headerVariants}
+        >
           A curation of digital products, case studies, and visual explorations where high-end editorial aesthetics meet functional engineering.
-        </p>
-      </section>
+        </motion.p>
+      </motion.section>
 
       {/* Asymmetrical Project Grid */}
-      <div className="asymmetric-grid">
-        
+      <motion.div 
+        className="asymmetric-grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         {/* Project 1: GoRSVP (Large Feature) */}
-        <div className="col-span-12 md:col-span-8 group relative">
+        <motion.div 
+          className="col-span-12 md:col-span-8 group relative"
+          variants={projectVariants}
+        >
           <div className="canvas-texture p-unit paper-curl transition-all duration-500 hover:-translate-y-2 border border-outline-variant/10 bg-surface-container/95 backdrop-blur-sm">
             <div className="relative overflow-hidden aspect-video mb-stack-md">
-              <img
+              <motion.img
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 alt="GoRSVP project preview"
                 src={gorsvp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.7 }}
               />
               <div className="absolute inset-0 bg-secondary/5 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
@@ -59,10 +113,13 @@ export default function Work() {
             </div>
           </div>
           <div className="absolute -z-10 -bottom-4 -right-4 w-full h-full border border-outline-variant/20 pointer-events-none bg-surface-container/95 backdrop-blur-sm"></div>
-        </div>
+        </motion.div>
 
-        {/* Project 2:Sheshield */}
-        <div className="col-span-12 md:col-span-4 md:mt-24 group">
+        {/* Project 2: SheShield */}
+        <motion.div 
+          className="col-span-12 md:col-span-4 md:mt-24 group"
+          variants={projectVariants}
+        >
           <div className="bg-surface-container-lowest canvas-texture p-unit paper-curl transition-all duration-500 hover:-translate-y-2 border-l-4 border-secondary">
             <div className="relative overflow-hidden aspect-3/4">
               <img 
@@ -87,16 +144,21 @@ export default function Work() {
                 </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Project 3: NextGenHire */}
-        <div className="col-span-12 md:col-span-5 group relative md:-mt-12">
+        <motion.div 
+          className="col-span-12 md:col-span-5 group relative md:-mt-12"
+          variants={projectVariants}
+        >
           <div className="bg-surface-container-low canvas-texture p-unit paper-curl transition-all duration-500 hover:-translate-y-2">
             <div className="relative overflow-hidden aspect-square">
-              <img 
+              <motion.img 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" 
-                alt="NextGenHire Project" 
+                alt="NextGenHire Project"
                 src={NextGenHire}
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.7 }}
               />
             </div>
             <div className="mt-6">
@@ -116,10 +178,13 @@ export default function Work() {
           </div>
           {/* Ink splatter decorative element */}
           <div className="hidden md:block absolute -top-8 -left-8 w-24 h-24 bg-primary opacity-5 rounded-full ink-splatter pointer-events-none"></div>
-        </div>
+        </motion.div>
 
         {/* Project 4: UI/UX Case Studies (Bento-style grid item)
-        <div className="col-span-12 md:col-span-7 group">
+        <motion.div 
+          className="col-span-12 md:col-span-7 group"
+          variants={projectVariants}
+        >
           <div className="h-full bg-surface-container-highest canvas-texture p-unit paper-curl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between">
             <div className="grid grid-cols-2 gap-unit h-64">
               <div className="overflow-hidden bg-white/20 backdrop-blur-sm p-4 border border-white/40">
@@ -155,25 +220,50 @@ export default function Work() {
           </div>
         </div> */}
 
-      </div>
+      </motion.div>
 
-      <div className="mt-12 flex justify-center">
-        <a className="group flex items-center gap-4 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 px-8 py-4 font-bold uppercase tracking-widest torn-edge active:scale-95" href="#">
+      <motion.div 
+        className="mt-12 flex justify-center"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.a 
+          className="group flex items-center gap-4 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-on-primary transition-all duration-300 px-8 py-4 font-bold uppercase tracking-widest torn-edge active:scale-95"
+          href="#"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
           <span>View More Projects</span>
-          <span className="material-symbols-outlined transition-transform duration-300 group-hover:rotate-90">add</span>
-        </a>
-      </div>
+          <motion.span 
+            className="material-symbols-outlined transition-transform duration-300 group-hover:rotate-90"
+            animate={{ rotate: [0, 90, 0] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
+            add
+          </motion.span>
+        </motion.a>
+      </motion.div>
 
       {/* Call to action */}
-      <section className="mt-stack-lg flex flex-col items-center text-center py-stack-md">
+      <motion.section 
+        className="mt-stack-lg flex flex-col items-center text-center py-stack-md"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <div className="w-full h-px bg-outline-variant/30 mb-stack-md"></div>
         <p className="font-headline-md text-headline-md text-primary max-w-2xl mb-8">
           Every line of code is a brushstroke. Let's create something <span className="italic text-secondary">memorable</span> together.
         </p>
-        <Link to="/contact" className="inline-block bg-primary text-on-primary font-bold px-6 sm:px-10 py-4 w-full sm:w-auto transition-all duration-300 hover:bg-secondary active:scale-95 torn-edge text-center">
-          Start a Conversation
-        </Link>
-      </section>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <Link to="/contact" className="inline-block bg-primary text-on-primary font-bold px-6 sm:px-10 py-4 w-full sm:w-auto transition-all duration-300 hover:bg-secondary active:scale-95 torn-edge text-center">
+            Start a Conversation
+          </Link>
+        </motion.div>
+      </motion.section>
     </main>
   );
 }

@@ -1,45 +1,119 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import pratik_Shinde from '../assets/pratik_shinde.png';
 
 export default function About() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.85 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.9, ease: 'easeOut' },
+    },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const skillTagVariants = {
+    hidden: { opacity: 0, scale: 0.8, rotate: -10 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: { duration: 0.6, ease: 'easeOut' },
+    },
+  };
+
   return (
     <main className="pt-stack-lg relative">
       <div className="fixed inset-0 texture-grain z-[-1]"></div>
       
       {/* Hero Storytelling Section */}
       <section className="max-w-container-max mx-auto px-margin-mobile md:px-stack-lg py-stack-lg relative">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {/* Left Narrative */}
-          <div className="md:col-span-7 relative z-10">
-            <span className="font-label-sm uppercase tracking-[0.3em] text-secondary mb-4 block">The Narrative</span>
-            <h1 className="font-display-lg text-display-lg mb-8 leading-none">Blending the <br/><span className="italic font-normal">Ink of Code</span> with <br/>Visual Poetics.</h1>
-            <div className="space-y-6 max-w-xl">
+          <motion.div className="md:col-span-7 relative z-10" variants={itemVariants}>
+            <motion.span 
+              className="font-label-sm uppercase tracking-[0.3em] text-secondary mb-4 block"
+              variants={itemVariants}
+            >
+              The Narrative
+            </motion.span>
+            <motion.h1 
+              className="font-display-lg text-display-lg mb-8 leading-none"
+              variants={itemVariants}
+            >
+              Blending the <br/><span className="italic font-normal">Ink of Code</span> with <br/>Visual Poetics.
+            </motion.h1>
+            <motion.div className="space-y-6 max-w-xl" variants={itemVariants}>
               <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
                 I am a digital artisan specializing in the intersection of technical precision and artistic expression. My work is not just about building interfaces; it's about crafting <span className="ink-underline">digital monographs</span> that breathe and respond.
               </p>
               <p className="font-body-md text-body-md text-on-surface-variant italic">
                 "Every line of code is a brushstroke. Every pixel, a point of intent."
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
           
           {/* Right Visual Collage */}
-          <div className="md:col-span-5 relative mt-12 md:mt-0">
+          <motion.div className="md:col-span-5 relative mt-12 md:mt-0" variants={imageVariants}>
             <div className="relative w-full aspect-[4/5] bg-surface-container-high mask-irregular overflow-hidden shadow-xl">
-              <img 
-                className="w-full h-full object-cover grayscale brightness-90 contrast-110" 
-                alt="Portrait" 
+              <motion.img 
+                className="w-full h-full object-cover grayscale brightness-90 contrast-110"
+                alt="Portrait"
                 src={pratik_Shinde}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.6 }}
               />
             </div>
             {/* Pinned Note Overlay */}
-            <div className="absolute md:-bottom-10 md:-left-10 inset-x-0 md:inset-x-auto mx-auto md:mx-0 bg-white p-6 paper-curl -rotate-3 border border-outline-variant/30 max-w-full md:max-w-[240px] w-full md:w-auto mt-6 md:mt-0">
+            <motion.div 
+              className="absolute md:-bottom-10 md:-left-10 inset-x-0 md:inset-x-auto mx-auto md:mx-0 bg-white p-6 paper-curl -rotate-3 border border-outline-variant/30 max-w-full md:max-w-[240px] w-full md:w-auto mt-6 md:mt-0"
+              initial={{ opacity: 0, rotate: -30 }}
+              animate={{ opacity: 1, rotate: -3 }}
+              transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
+              whileHover={{ rotate: 0 }}
+            >
               <span className="material-symbols-outlined text-secondary absolute -top-4 -right-2 rotate-12 fill-current">push_pin</span>
               <h4 className="font-headline-md text-body-md mb-2">The Mindset</h4>
               <p className="font-label-sm text-on-surface-variant leading-tight">Prioritizing the human touch in a digital landscape. Seeking the "perfectly imperfect."</p>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </section>
 
             {/* Skills Section: Orbital / Layered Arrangement */}
@@ -149,26 +223,32 @@ export default function About() {
             </div>
             
             {/* Visual Poetry Card */}
-            <div className="relative group md:mt-12">
-              <div className="bg-surface-container-lowest p-8 sm:p-10 paper-curl border-t-4 border-primary transition-transform hover:-translate-y-2 duration-300 h-full">
+            <motion.div className="relative group md:mt-12" variants={itemVariants}>
+              <motion.div 
+                className="bg-surface-container-lowest p-8 sm:p-10 paper-curl border-t-4 border-primary transition-transform hover:-translate-y-2 duration-300 h-full"
+                whileHover={{ y: -8 }}
+              >
                 <span className="material-symbols-outlined text-primary text-4xl mb-6">brush</span>
                 <h3 className="font-headline-md text-headline-md mb-4">Visual Poetry</h3>
                 <p className="text-on-surface-variant leading-relaxed">
                   Inspired by Swiss design and classic typography, my visual approach emphasizes whitespace, hierarchy, and intentional asymmetry to guide the user's eye.
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
             
             {/* Immersive Strategy Card */}
-            <div className="relative group">
-              <div className="bg-surface-container-lowest p-8 sm:p-10 paper-curl border-t-4 border-secondary transition-transform hover:-translate-y-2 duration-300 h-full">
+            <motion.div className="relative group" variants={itemVariants}>
+              <motion.div 
+                className="bg-surface-container-lowest p-8 sm:p-10 paper-curl border-t-4 border-secondary transition-transform hover:-translate-y-2 duration-300 h-full"
+                whileHover={{ y: -8 }}
+              >
                 <span className="material-symbols-outlined text-secondary text-4xl mb-6">auto_awesome</span>
                 <h3 className="font-headline-md text-headline-md mb-4">Immersive Flow</h3>
                 <p className="text-on-surface-variant leading-relaxed">
                   I create digital environments that feel physical. Soft ambient shadows and tonal layering bridge the gap between the screen and the studio.
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
           </div>
         </div>
@@ -176,8 +256,20 @@ export default function About() {
 
       {/* Content Canvas Section */}
       <section className="max-w-container-max mx-auto px-margin-mobile md:px-stack-lg py-stack-lg overflow-hidden">
-        <div className="relative flex flex-col md:flex-row gap-16 items-start">
-          <div className="md:w-1/2">
+        <motion.div 
+          className="relative flex flex-col md:flex-row gap-16 items-start"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.div 
+            className="md:w-1/2"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <h2 className="font-display-lg text-headline-lg mb-8">The Studio <span className="italic font-normal">Archive</span></h2>
             <div className="space-y-12">
               <div className="border-l-2 border-outline-variant/50 pl-8">
@@ -193,45 +285,92 @@ export default function About() {
                 <p className="text-on-surface-variant">The "Ink &amp; Code" phase. Polishing animations to feel organic and ensuring the technical architecture is as robust as the visual front.</p>
               </div>
             </div>
-          </div>
+          </motion.div>
           
-          <div className="md:w-1/2 relative mt-12 md:mt-0">
+          <motion.div 
+            className="md:w-1/2 relative mt-12 md:mt-0"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <div className="relative w-full aspect-square rotate-2 bg-surface shadow-2xl p-4">
               <div className="w-full h-full overflow-hidden mask-irregular">
-                <img 
-                  className="w-full h-full object-cover grayscale" 
-                  alt="Studio desk" 
+                <motion.img 
+                  className="w-full h-full object-cover grayscale"
+                  alt="Studio desk"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO8y_hN5gEhSw9_oQZVm_EKk7qwGrbiSXllreNS3lYadHd9yAbnGdwkfLgLlu8LPEeHDmJQhQCLRXNp5qUrtjQzEd2yU7FJrdQqBzMggxHFJgyOJ8MNvAY3iFEgieGYjNo5NCGnn8YhpPmiPWq3UTmeCcnIRnPUUxYsw9YRXNmbXwvq3eJYx7H39utNXdxDAzVUGDom4jSM7ZbO7tHmkCFBewhuOGuhwSk1o-p6nTEFNFPMsuC9SWuslEg2gu_1hvTEO2LOLh9gTqJ"
+                  whileHover={{ scale: 1.05, filter: 'grayscale(0.5)' }}
+                  transition={{ duration: 0.6 }}
                 />
               </div>
               {/* Masking Tape Detail */}
-              <div className="absolute -top-4 left-1/4 w-32 h-8 bg-primary-fixed/40 rotate-1 mix-blend-multiply flex items-center justify-center font-label-sm uppercase tracking-widest text-on-surface/60">Process Log</div>
+              <motion.div 
+                className="absolute -top-4 left-1/4 w-32 h-8 bg-primary-fixed/40 rotate-1 mix-blend-multiply flex items-center justify-center font-label-sm uppercase tracking-widest text-on-surface/60"
+                animate={{ rotate: [1, -1, 1] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                Process Log
+              </motion.div>
             </div>
             {/* Floating Paper Scrap */}
-            <div className="hidden md:block absolute -bottom-10 -right-8 bg-tertiary-fixed p-6 rotate-6 shadow-lg max-w-[200px]">
+            <motion.div 
+              className="hidden md:block absolute -bottom-10 -right-8 bg-tertiary-fixed p-6 rotate-6 shadow-lg max-w-[200px]"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
               <p className="font-headline-md text-body-md text-on-tertiary-fixed italic">"Beauty lies in the details often overlooked."</p>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Final Call to Narrative */}
-      <section className="py-stack-lg border-t border-outline-variant/20">
+      <motion.section 
+        className="py-stack-lg border-t border-outline-variant/20"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-stack-lg text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-display-lg text-display-lg mb-8">Ready to draft your <br/><span className="text-secondary">next chapter?</span></h2>
-            <p className="font-body-lg text-body-lg mb-10 text-on-surface-variant">I am currently accepting select commissions for immersive digital storytelling projects.</p>
-            <div className="flex flex-col md:flex-row justify-center gap-6">
-              <Link to="/contact" className="bg-secondary text-on-secondary px-10 py-4 font-headline-md text-body-lg hover:brightness-110 transition-all shadow-lg hover:shadow-secondary/20 inline-block">
-                Start a Conversation
-              </Link>
-              <Link to="/work" className="border-b-2 border-primary py-4 font-headline-md text-body-lg hover:text-secondary hover:border-secondary transition-all inline-block">
-                View Archive
-              </Link>
-            </div>
-          </div>
+          <motion.div 
+            className="max-w-3xl mx-auto"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="font-display-lg text-display-lg mb-8"
+              variants={itemVariants}
+            >
+              Ready to draft your <br/><span className="text-secondary">next chapter?</span>
+            </motion.h2>
+            <motion.p 
+              className="font-body-lg text-body-lg mb-10 text-on-surface-variant"
+              variants={itemVariants}
+            >
+              I am currently accepting select commissions for immersive digital storytelling projects.
+            </motion.p>
+            <motion.div 
+              className="flex flex-col md:flex-row justify-center gap-6"
+              variants={containerVariants}
+            >
+              <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/contact" className="bg-secondary text-on-secondary px-10 py-4 font-headline-md text-body-lg hover:brightness-110 transition-all shadow-lg hover:shadow-secondary/20 inline-block">
+                  Start a Conversation
+                </Link>
+              </motion.div>
+              <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/work" className="border-b-2 border-primary py-4 font-headline-md text-body-lg hover:text-secondary hover:border-secondary transition-all inline-block">
+                  View Archive
+                </Link>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </main>
   );
 }
