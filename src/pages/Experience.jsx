@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Experience() {
   return (
-    <main className="relative pt-[120px]">
+    <main className="relative pt-[96px] md:pt-[120px]">
       <div className="fixed inset-0 pointer-events-none texture-canvas"></div>
       <div className="fixed inset-0 pointer-events-none grain-overlay opacity-30"></div>
 
@@ -58,7 +58,7 @@ export default function Experience() {
                     {/* Visual Accent */}
                     <div className="mt-8">
                       <img 
-                        className="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-500 rounded-sm shadow-sm" 
+                        className="w-full h-64 md:h-48 object-cover grayscale hover:grayscale-0 transition-all duration-500 rounded-sm shadow-sm" 
                         alt="Workspace" 
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvdIIX83hWSkt63oYAocTgpZNaRqywWpy2ziivM1-8LPpx0RDGB8MPjEV8zg8y6R-05704lH1AwNXyPoqq7bjua4b-h8Zyi3-4c8KRaJ6e9HSyV63E1UfN-u-PQbqExLLkdEwgvPyCtZ20jDdNZMgfNC4yczDDM5h3obimin1fgMq5rplCFKmPV-ytJwVEU3FbXnzvorU1M2BCJc2X_-XUfiEw4WirqFcgi8VJhza8Asfq9v5fe_ESvArVhzdmRqMbdCbGrdHY4vUx"
                       />
@@ -133,10 +133,10 @@ export default function Experience() {
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-stack-lg text-center">
           <h2 className="font-display-lg text-display-lg text-on-secondary-fixed mb-6">Let's create something <br/><span className="italic text-secondary">extraordinary</span> together.</h2>
           <div className="flex flex-wrap justify-center gap-6 mt-10">
-            <Link to="/contact" className="bg-secondary text-on-secondary px-10 py-4 font-headline-md text-headline-md uppercase tracking-tighter hover:bg-on-secondary-container transition-all active:scale-95 inline-block">
+            <Link to="/contact" className="bg-secondary text-on-secondary px-6 sm:px-10 py-4 w-full sm:w-auto font-headline-md text-headline-md uppercase tracking-tighter hover:bg-on-secondary-container transition-all active:scale-95 inline-block text-center">
               Send a Brief
             </Link>
-            <Link to="/work" className="border-2 border-secondary text-secondary px-10 py-4 font-headline-md text-headline-md uppercase tracking-tighter hover:bg-secondary/5 transition-all active:scale-95 inline-block">
+            <Link to="/work" className="border-2 border-secondary text-secondary px-6 sm:px-10 py-4 w-full sm:w-auto font-headline-md text-headline-md uppercase tracking-tighter hover:bg-secondary/5 transition-all active:scale-95 inline-block text-center">
               View Folio
             </Link>
           </div>

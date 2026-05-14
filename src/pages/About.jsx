@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import pratik_Shinde from '../assets/pratik_shinde.png';
 
 export default function About() {
   return (
@@ -28,11 +29,11 @@ export default function About() {
               <img 
                 className="w-full h-full object-cover grayscale brightness-90 contrast-110" 
                 alt="Portrait" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_ARlWvl2UM7g6vHDVpaBvM_9zh5YB48dCDk8PjedT1B4_2ZKSEbIZmv7pdcy9y9AisEAOanbcauxVQ-qN0Vn5rnk4UBpbV1pzqLQUTgHDs7T-mSe-GkOjZbJMora62r92TTNqikHtknTWPyzG7bxRPnSm27VtMGeFoRDHxeKvY8_G2dmk-27FmogauGu3hoL2mkZK0wGciYp3A1aNrYXxTnsysSrc6nFFyEREd2_1JiV_iLDgEYiBXLCGbjHllf-Ojxi4wDqP6Ne4"
+                src={pratik_Shinde}
               />
             </div>
             {/* Pinned Note Overlay */}
-            <div className="absolute -bottom-10 -left-10 bg-white p-6 paper-curl -rotate-3 border border-outline-variant/30 max-w-[240px]">
+            <div className="absolute md:-bottom-10 md:-left-10 inset-x-0 md:inset-x-auto mx-auto md:mx-0 bg-white p-6 paper-curl -rotate-3 border border-outline-variant/30 max-w-full md:max-w-[240px] w-full md:w-auto mt-6 md:mt-0">
               <span className="material-symbols-outlined text-secondary absolute -top-4 -right-2 rotate-12 fill-current">push_pin</span>
               <h4 className="font-headline-md text-body-md mb-2">The Mindset</h4>
               <p className="font-label-sm text-on-surface-variant leading-tight">Prioritizing the human touch in a digital landscape. Seeking the "perfectly imperfect."</p>
@@ -44,7 +45,7 @@ export default function About() {
             {/* Skills Section: Orbital / Layered Arrangement */}
       <section className="max-w-container-max mx-auto px-margin-mobile md:px-stack-lg py-stack-lg relative">
         <div className="flex flex-col md:flex-row gap-gutter items-start">
-          <div className="w-full md:w-1/3 mb-stack-md sticky top-stack-lg">
+          <div className="w-full md:w-1/3 mb-stack-md md:sticky top-stack-lg">
             <h2 className="font-headline-lg text-headline-lg mb-unit">Crafting Digital Artifacts</h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant italic border-l-4 border-secondary pl-4">
               A synthesis of technical precision and artistic expression. My toolkit is an evolving gallery of modern standards.
@@ -138,7 +139,7 @@ export default function About() {
             
             {/* Code as Craft Card */}
             <div className="relative group">
-              <div className="bg-surface-container-lowest p-10 paper-curl border-t-4 border-secondary transition-transform hover:-translate-y-2 duration-300 h-full">
+              <div className="bg-surface-container-lowest p-8 sm:p-10 paper-curl border-t-4 border-secondary transition-transform hover:-translate-y-2 duration-300 h-full">
                 <span className="material-symbols-outlined text-secondary text-4xl mb-6">terminal</span>
                 <h3 className="font-headline-md text-headline-md mb-4">Code as Craft</h3>
                 <p className="text-on-surface-variant leading-relaxed">
@@ -149,7 +150,7 @@ export default function About() {
             
             {/* Visual Poetry Card */}
             <div className="relative group md:mt-12">
-              <div className="bg-surface-container-lowest p-10 paper-curl border-t-4 border-primary transition-transform hover:-translate-y-2 duration-300 h-full">
+              <div className="bg-surface-container-lowest p-8 sm:p-10 paper-curl border-t-4 border-primary transition-transform hover:-translate-y-2 duration-300 h-full">
                 <span className="material-symbols-outlined text-primary text-4xl mb-6">brush</span>
                 <h3 className="font-headline-md text-headline-md mb-4">Visual Poetry</h3>
                 <p className="text-on-surface-variant leading-relaxed">
@@ -160,7 +161,7 @@ export default function About() {
             
             {/* Immersive Strategy Card */}
             <div className="relative group">
-              <div className="bg-surface-container-lowest p-10 paper-curl border-t-4 border-secondary transition-transform hover:-translate-y-2 duration-300 h-full">
+              <div className="bg-surface-container-lowest p-8 sm:p-10 paper-curl border-t-4 border-secondary transition-transform hover:-translate-y-2 duration-300 h-full">
                 <span className="material-symbols-outlined text-secondary text-4xl mb-6">auto_awesome</span>
                 <h3 className="font-headline-md text-headline-md mb-4">Immersive Flow</h3>
                 <p className="text-on-surface-variant leading-relaxed">
@@ -207,7 +208,7 @@ export default function About() {
               <div className="absolute -top-4 left-1/4 w-32 h-8 bg-primary-fixed/40 rotate-1 mix-blend-multiply flex items-center justify-center font-label-sm uppercase tracking-widest text-on-surface/60">Process Log</div>
             </div>
             {/* Floating Paper Scrap */}
-            <div className="absolute -bottom-10 -right-8 bg-tertiary-fixed p-6 rotate-6 shadow-lg max-w-[200px]">
+            <div className="hidden md:block absolute -bottom-10 -right-8 bg-tertiary-fixed p-6 rotate-6 shadow-lg max-w-[200px]">
               <p className="font-headline-md text-body-md text-on-tertiary-fixed italic">"Beauty lies in the details often overlooked."</p>
             </div>
           </div>

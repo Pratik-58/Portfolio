@@ -114,7 +114,7 @@ export default function Work() {
             </div>
           </div>
           {/* Ink splatter decorative element */}
-          <div className="absolute -top-8 -left-8 w-24 h-24 bg-primary opacity-5 rounded-full ink-splatter pointer-events-none"></div>
+          <div className="hidden md:block absolute -top-8 -left-8 w-24 h-24 bg-primary opacity-5 rounded-full ink-splatter pointer-events-none"></div>
         </div>
 
         {/* Project 4: UI/UX Case Studies (Bento-style grid item)
@@ -169,7 +169,7 @@ export default function Work() {
         <p className="font-headline-md text-headline-md text-primary max-w-2xl mb-8">
           Every line of code is a brushstroke. Let's create something <span className="italic text-secondary">memorable</span> together.
         </p>
-        <Link to="/contact" className="inline-block bg-primary text-on-primary font-bold px-10 py-4 transition-all duration-300 hover:bg-secondary active:scale-95 torn-edge">
+        <Link to="/contact" className="inline-block bg-primary text-on-primary font-bold px-6 sm:px-10 py-4 w-full sm:w-auto transition-all duration-300 hover:bg-secondary active:scale-95 torn-edge text-center">
           Start a Conversation
         </Link>
       </section>

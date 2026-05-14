@@ -6,8 +6,8 @@ export default function Contact() {
       <div className="fixed inset-0 pointer-events-none canvas-grain z-[-1]"></div>
       
       {/* Background Decorative Elements */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/4"></div>
-      <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-tertiary-fixed/10 rounded-full blur-3xl -z-10 -translate-x-1/2"></div>
+      <div className="hidden md:block absolute top-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/4"></div>
+      <div className="hidden md:block absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-tertiary-fixed/10 rounded-full blur-3xl -z-10 -translate-x-1/2"></div>
 
       {/* Skills Section: Orbital / Layered Arrangement */}
 

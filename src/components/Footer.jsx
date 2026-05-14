@@ -17,7 +17,7 @@ export default function Footer() {
           <Link to="/work" className="text-secondary font-bold hover:underline decoration-secondary decoration-2 underline-offset-4 transition-opacity hover:opacity-80">
             <span className="material-symbols-outlined" data-icon="read_more">read_more</span>
           </Link>
-          <a href="mailto:hello@pratikshinde.design" className="text-on-surface-variant hover:text-secondary hover:underline decoration-secondary decoration-2 underline-offset-4 transition-opacity">
+          <a href="mailto:shindepratik582004@gmail.com" className="text-on-surface-variant hover:text-secondary hover:underline decoration-secondary decoration-2 underline-offset-4 transition-opacity">
             <span className="material-symbols-outlined" data-icon="mail">mail</span>
           </a>
           <Link to="/about" className="text-on-surface-variant hover:text-secondary hover:underline decoration-secondary decoration-2 underline-offset-4 transition-opacity">

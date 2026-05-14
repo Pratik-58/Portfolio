@@ -10,10 +10,10 @@ export default function Home() {
         <div className="absolute bottom-[10%] -right-10 w-64 h-64 opacity-10 pointer-events-none -rotate-12 bg-tertiary/20 blur-2xl"></div>
         
         {/* Abstract Ink Splash Decor */}
-        <div className="absolute top-[15%] right-[10%] opacity-40 select-none">
+        <div className="absolute top-[15%] right-[10%] opacity-40 select-none hidden sm:block">
           <img 
             alt="Abstract ink splash" 
-            className="w-32 h-32 object-cover torn-edge grayscale contrast-125" 
+            className="w-28 h-28 sm:w-32 sm:h-32 object-cover torn-edge grayscale contrast-125" 
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJVhvarmcLnFIiClogTSno1g3CLwY7mXYgqk-8sMbTKt-wbT9f0VAaNrIJTbzavi-ynHR0OwnapYAyR5vzF6nZK8mGzsuAr9MHpmp5vTreuQ0QNyUhPivTSK61XEBgAV1JR1nN5oWCXKeHfMMDxVOEe4Wu3Stv9kA9e96Nr9osY82lxLk-4JTYBLdlDV3GJ7zMe9bypwoNjgGH1jb6NFZktU6vP_8iAFdN-5YjciavUwKOy1qzcNeXkvL4ecliOVDsua-Q3T9OMq2v"
           />
         </div>
@@ -46,11 +46,11 @@ export default function Home() {
           </p>
           
           {/* CTAs */}
-          <div className="mt-stack-md flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link to="/work" className="bg-secondary text-on-secondary px-10 py-4 font-body-md font-bold text-body-md uppercase tracking-widest torn-edge hover:opacity-90 transition-opacity active:scale-95 shadow-lg shadow-secondary/20 inline-block">
+          <div className="mt-stack-md flex flex-col sm:flex-row gap-6 justify-center items-center w-full">
+            <Link to="/work" className="bg-secondary text-on-secondary px-6 sm:px-10 py-4 w-full sm:w-auto text-center font-body-md font-bold text-body-md uppercase tracking-widest torn-edge hover:opacity-90 transition-opacity active:scale-95 shadow-lg shadow-secondary/20 inline-block">
               View Work
             </Link>
-            <Link to="/contact" className="group relative px-10 py-4 font-body-md font-bold text-body-md uppercase tracking-widest text-primary active:scale-95 transition-transform inline-block">
+            <Link to="/contact" className="group relative px-6 sm:px-10 py-4 w-full sm:w-auto text-center font-body-md font-bold text-body-md uppercase tracking-widest text-primary active:scale-95 transition-transform inline-block">
               <span className="relative z-10">Contact Me</span>
               <div className="absolute bottom-1 left-0 w-full h-[2px] bg-primary group-hover:h-full group-hover:bg-primary-fixed-dim transition-all -z-0"></div>
             </Link>
