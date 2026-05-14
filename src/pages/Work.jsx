@@ -6,7 +6,8 @@ import NextGenHire from '../assets/NextGenHire.png';
 export default function Work() {
   return (
     <main className="pt-32 pb-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-stack-lg relative">
-      <div className="fixed inset-0 grain-overlay-multiply z-[-1]"></div>
+      <div className="fixed inset-0 pointer-events-none texture-canvas"></div>
+      <div className="fixed inset-0 pointer-events-none grain-overlay opacity-30"></div>
       
       {/* Hero Section Header */}
       <section className="mb-stack-lg">
